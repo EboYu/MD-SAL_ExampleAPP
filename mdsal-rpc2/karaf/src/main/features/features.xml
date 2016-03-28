@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features name="${project.artifactId}-${project.version}" xmlns="http://karaf.apache.org/xmlns/features/v1.2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://karaf.apache.org/xmlns/features/v1.2.0 http://karaf.apache.org/xmlns/features/v1.2.0">
+
+  <repository>mvn:org.opendaylight.yangtools/features-yangtools/${yangtools.version}/xml/features</repository>
+  <repository>mvn:org.opendaylight.controller/features-mdsal/${mdsal.version}/xml/features</repository>
+  <repository>mvn:org.opendaylight.controller/features-restconf/${mdsal.version}/xml/features</repository>
+
+  <feature name="ebo-rpcprovider-model" description="EBO :: RPCPROVIDER :: MODEL" version="${project.version}">
+    <feature version="${yangtools.version}">odl-yangtools-models</feature>
+    <bundle>mvn:org.opendaylight.sdnebo/model/${project.version}</bundle>
+  </feature>
+
+  <feature name="ebo-rpcprovider-impl" description="EBO :: RPCPROVIDER :: IMPL" version="${project.version}">
+    <feature version="${project.version}">ebo-rpcprovider-model</feature>
+    <feature version="${mdsal.version}">odl-restconf</feature>
+    <bundle>mvn:org.opendaylight.sdnebo/implementation/${project.version}</bundle>
+    <configfile finalname="etc/opendaylight/karaf/801-rpcprovider-config.xml">
+      mvn:org.opendaylight.sdnebo/configuration/${project.version}/xml/config
+    </configfile>
+  </feature>
+
+  <feature name="ebo-rpcprovider-apidocs" description="EBO :: RPCPROVIDER :: APIDOCS" version="${project.version}">
+
+    <feature version="${project.version}">ebo-rpcprovider-impl</feature>
+    <feature version="${mdsal.version}">odl-mdsal-apidocs</feature>
+  </feature>
+
+</features>
