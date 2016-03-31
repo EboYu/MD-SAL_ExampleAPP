@@ -5,13 +5,13 @@
   <parent>
     <groupId>org.opendaylight.sdnebo</groupId>
     <artifactId>rpcprovider-top</artifactId>
-    <version>1.0.0-Helium-SR2</version>
+    <version>1.0.0-Lithium-SR4</version>
     <relativePath>../</relativePath>
   </parent>
 
   <groupId>org.opendaylight.sdnebo</groupId>
   <artifactId>model</artifactId>
-  <version>1.0.0-Helium-SR2</version>
+  <version>1.0.0-Lithium-SR4</version>
   <name>${project.artifactId}</name>
 
   <packaging>bundle</packaging>

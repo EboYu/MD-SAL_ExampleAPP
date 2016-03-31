@@ -52,7 +52,7 @@ public class EboRpcProviderImpl implements EboRpcproviderService {
 
   private final String SDNLAB_URL = new String("http://nulistteam.github.io/");
   private final String SDNLAB_EMAIL = new String("test");
-  private final String SDNLAB_CITY = new String("test");
+  private final String SDNLAB_CITY = new String("Chicago");
   private final Long SDNLAB_EMPLOYEES = new Long(2);
 
   public EboRpcProviderImpl() {
@@ -98,7 +98,7 @@ public class EboRpcProviderImpl implements EboRpcproviderService {
         !(keywordInput.getValue().equals(KEYWORD_SDNLAB))){
       eboRpcproviderBuilder = RpcResultBuilder.<EboRpcproviderOutput>failed()
         .withError(ErrorType.APPLICATION, "Invalid input value",
-          "only sdnebo or sdnlist is acceptable as a keyword.");
+          "only sdnebo or sdnlab is acceptable as a keyword.");
     //set profiles into outputBuilder.
     }else {
       outputBuilder = new EboRpcproviderOutputBuilder();

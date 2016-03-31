@@ -5,13 +5,13 @@
   <parent>
     <groupId>org.opendaylight.odlparent</groupId>
     <artifactId>odlparent</artifactId>
-    <version>1.4.4-Helium-SR2</version>
+    <version>1.5.4-Lithium-SR4</version>
     <relativePath />
   </parent>
 
   <groupId>org.opendaylight.sdnebo</groupId>
   <artifactId>rpcprovider-top</artifactId>
-  <version>1.0.0-Helium-SR2</version>
+  <version>1.0.0-Lithium-SR4</version>
   <name>${project.artifactId}</name>
 
   <packaging>pom</packaging>
@@ -22,13 +22,13 @@
     <configFilePath>${project.build.directory}/classes/initial/801-rpcprovider-config.xml</configFilePath>
     <featureFilePath>${project.build.directory}/classes/features.xml</featureFilePath>
     <karFilePath>${project.build.directory}/${project.artifactId}-${project.version}.kar</karFilePath>
-    <yangtools.version>0.6.4-Helium-SR2</yangtools.version>
-    <mdsal.version>1.1.2-Helium-SR2</mdsal.version>
-    <config.version>0.2.7-Helium-SR2</config.version>
+    <yangtools.version>0.7.4-Lithium-SR4</yangtools.version>
+    <mdsal.version>1.2.4-Lithium-SR4</mdsal.version>
+    <config.version>0.3.4-Lithium-SR4</config.version>
     <mojo.build.helper.version>1.8</mojo.build.helper.version>
     <maven.resources.version>2.7</maven.resources.version>
     <karaf.version>3.0.1</karaf.version>
-    <rpcprovider.version>1.0.0-Helium-SR2</rpcprovider.version>
+    <rpcprovider.version>1.0.0-Lithium-SR4</rpcprovider.version>
   </properties>
 
   <dependencies>
