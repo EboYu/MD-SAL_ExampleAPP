@@ -25,9 +25,9 @@ and is available at http://www.eclipse.org/legal/epl-v10.html
   </feature>
 
   <feature name='exampleapp-impl' version='${project.version}' description='Ebo :: exampleapp :: impl'>
-    <feature version='${project.version}'>exampleapp-api</feature>
     <feature version="${mdsal.version}">odl-mdsal-remoterpc-connector</feature>
     <feature version='${mdsal.version}'>odl-mdsal-broker</feature>
+    <feature version='${project.version}'>exampleapp-api</feature>
     <bundle>mvn:org.opendaylight.sdn/exampleapp-impl/${project.version}</bundle>
     <configfile finalname="${configfile.directory}/49-exampleapp.xml">mvn:org.opendaylight.sdn/exampleapp-config/${project.version}/xml/config</configfile>
   </feature>

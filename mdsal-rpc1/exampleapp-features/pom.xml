@@ -5,12 +5,16 @@
     <parent>
       <groupId>org.opendaylight.sdn</groupId>
       <artifactId>exampleapp</artifactId>
-      <version>1.0.0-SNAPSHOT</version>
+      <version>1.0.0-Lithium-SR4</version>
+      <relativePath >../</relativePath>
     </parent>
-    <artifactId>exampleapp-features</artifactId>
-    <packaging>jar</packaging>
-    <version>1.0.0-SNAPSHOT</version>
 
+    <groupId>org.opendaylight.sdn</groupId>
+    <artifactId>exampleapp-features</artifactId>
+   
+    <version>1.0.0-Lithium-SR4</version>
+    <name>${project.artifactId}</name>
+    <packaging>jar</packaging>
     <properties>
         <configfile.directory>etc/opendaylight/karaf</configfile.directory>
    </properties>
@@ -59,6 +63,44 @@
                     </execution>
                 </executions>
             </plugin>
+		<plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <skip>${skip.karaf}</skip>
+                    <systemPropertyVariables>
+                        <karaf.distro.groupId>org.opendaylight.controller</karaf.distro.groupId>
+                        <karaf.distro.artifactId>opendaylight-karaf-empty</karaf.distro.artifactId>
+                        <karaf.distro.version>${opendaylight-karaf-empty.version}</karaf.distro.version>
+                    </systemPropertyVariables>
+                    <!--<dependenciesToScan>
+           <dependency>org.opendaylight.yangtools:features-test</dependency>
+          </dependenciesToScan>-->
+        </configuration>
+         </plugin>
         </plugins>
     </build>
+
+   <dependencies>
+    <dependency>
+      <groupId>org.opendaylight.sdn</groupId>
+      <artifactId>exampleapp-api</artifactId>
+      <version>1.0.0-Lithium-SR4</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.opendaylight.sdn</groupId>
+      <artifactId>exampleapp-impl</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.opendaylight.sdn</groupId>
+      <artifactId>exampleapp-config</artifactId>
+      <version>${project.version}</version>
+      <classifier>config</classifier>
+      <type>xml</type>
+    </dependency>
+  </dependencies>
+
 </project>
