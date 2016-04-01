@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.tencent.datacenter.fabric</groupId>
+    <artifactId>commons</artifactId>
+    <version>1.0.0-Beryllium-SR1</version>
+    <relativePath>../../commons/parent/</relativePath>
+  </parent>
+
+  <groupId>org.tencent.datacenter.fabric</groupId>
+  <artifactId>utils</artifactId>
+  <name>Fabric Controller project common utils</name>
+  <version>1.0.0-Beryllium-SR1</version>
+  <packaging>bundle</packaging>
+
+  <dependencies>
+        <!-- OpenFlow plugin artifacts -->
+        <dependency>
+          <groupId>org.opendaylight.openflowplugin</groupId>
+          <artifactId>openflowplugin-api</artifactId>
+          <version>${openflowplugin.version}</version>
+        </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <version>2.4.0</version>
+        <extensions>true</extensions>
+        <configuration>
+          <instructions>
+            <Embed-Transitive>
+              false
+            </Embed-Transitive>
+            <Export-Package>
+              org.tencent.datacenter.fabric.utils
+            </Export-Package>
+          </instructions>
+          <manifestLocation>${project.basedir}/META-INF</manifestLocation>
+         </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

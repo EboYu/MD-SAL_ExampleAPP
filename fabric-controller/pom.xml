@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.tencent.datacenter.fabric</groupId>
+    <artifactId>commons</artifactId>
+    <version>1.0.0-Beryllium-SR1</version>
+    <relativePath>commons/parent</relativePath>
+  </parent>
+
+  <artifactId>main</artifactId>
+  <version>0.6.0-Beryllium-SR1</version>
+  <packaging>pom</packaging>
+  <modules>
+      <module>commons/parent</module>  <!-- Common properties -->
+      <module>commons/utils</module>   <!-- Common utilities useful for flow programming -->
+      <module>features</module>        <!-- Karaf feature description -->
+      <module>distribution</module>    <!-- Branding and packaging -->
+  </modules>
+
+ <scm>
+    <connection>scm:git:ssh://git.opendaylight.org:29418/fabric-controller.git</connection>
+    <developerConnection>scm:git:ssh://git.opendaylight.org:29418/fabric-controller.git</developerConnection>
+    <tag>HEAD</tag>
+    <url>https://wiki.opendaylight.org/view/fabric-controller:Main</url>
+  </scm>
+</project>
